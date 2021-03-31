@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+
+    tools:context=".MainActivity"
+   >
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/lightdark">
+
+
+        <TextView
+            android:id="@+id/tempToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
+            android:text="Ngủ khoa học"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
+
+            >
+
+
+        </TextView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingBtnaddalarm"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:outlineProvider="none"
+            app:backgroundTint="@color/lightdark"
+            app:borderWidth="0dp"
+            app:rippleColor="#3E3C3C"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            app:tint="@color/white" />
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingBtnedit"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="0dp"
+            android:outlineProvider="none"
+            app:backgroundTint="@color/lightdark"
+            app:borderWidth="0dp"
+            app:rippleColor="#3E3C3C"
+            app:srcCompat="@drawable/ic_baseline_edit_24"
+            app:tint="@color/white" />
+
+
+    </RelativeLayout>
+
+
+
+    <ListView
+        android:id="@+id/listviewAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+
+        android:layout_below="@+id/toolbar"
+
+        android:divider="@android:color/transparent"
+        android:dividerHeight="15dp" />
+
+
+
+</RelativeLayout>
