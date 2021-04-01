@@ -72,7 +72,6 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:id="@+id/relaAddtext">
-
         <TextView
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
@@ -81,66 +80,12 @@
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:textSize="25dp"
-
-            android:id="@+id/datetimeTV"
-
-
-            ></TextView>
-
-
-
-
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tên sự kiện :"
-
-            android:textSize="20dp"
-            android:layout_below="@+id/spinner"
-            android:layout_gravity="center"
-            android:id="@+id/nameevent"
-            android:layout_marginLeft="20dp"
-            ></TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nameevent"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/edteventTitle"
-            ></EditText>
-
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mô tả sự kiện :"
-
-            android:textSize="20dp"
-            android:layout_below="@+id/edteventTitle"
-            android:layout_gravity="center"
-            android:id="@+id/eventdesc"
-            android:layout_marginLeft="20dp"
-            ></TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/eventdesc"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/edteventDesc"
-            android:minLines="3"
-            android:gravity="top|left"
-            android:maxLines="10"
-            ></EditText>
-
+            android:id="@+id/datetimeTV"/>
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:id="@+id/blankspace2"
-            android:layout_below="@+id/eventdesc"
+            android:layout_below="@+id/spinner"
             android:layout_centerHorizontal="true"/>
 
         <Button
@@ -151,34 +96,25 @@
             android:layout_toRightOf="@id/blankspace2"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="50dp"
-            android:layout_below="@id/edteventDesc"
-            ></Button>
-
+            android:layout_below="@id/blankspace2"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="&lt;&lt;"
             android:id="@+id/btnBacktoTimepicker"
-
-
             android:layout_toLeftOf="@id/blankspace2"
             android:layout_marginTop="30dp"
             android:layout_marginRight="50dp"
-            android:layout_below="@id/edteventDesc" />
-
+            android:layout_below="@id/blankspace2" />
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_below="@id/datetimeTV"
-
-
             android:layout_centerHorizontal="true"
-
             android:backgroundTint="@color/teal_700"
             android:gravity="center"
             android:spinnerMode="dropdown" />
-
     </RelativeLayout>
 
 

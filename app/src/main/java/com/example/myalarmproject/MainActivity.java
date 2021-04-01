@@ -89,35 +89,13 @@ public class MainActivity extends AppCompatActivity {
 
         timePicker.setIs24HourView(true);
         textViewtime.setText(timePicker.getHour()+":"+timePicker.getMinute());
-        Space space=alertLayout.findViewById(R.id.blankspace);
-
-
-
-        EditText edtTitle= alertLayout.findViewById(R.id.edteventTitle);
-        EditText edtDesc= alertLayout.findViewById(R.id.edteventDesc);
-        edtTitle.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
 
 
 
         alert.setTitle("Chọn thời gian cho Báo Thức");
         alert.setView(alertLayout);
-        alert.setCancelable(false);
+        alert.setCancelable(true);
 
         AlertDialog dialog = alert.create();
         dialog.show();
@@ -161,9 +139,6 @@ public class MainActivity extends AppCompatActivity {
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                eventTitle = edtTitle.getText().toString();
-                eventDesc=edtDesc.getText().toString();
                 DatabaseHelper mydb = new DatabaseHelper(getApplicationContext());
                 Spinner spinner = (Spinner)alertLayout.findViewById(R.id.spinner);
 
@@ -302,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, categories);
+                    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, categories);
 
                     dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -357,16 +332,8 @@ public class MainActivity extends AppCompatActivity {
 
             DatabaseHelper mydb = new DatabaseHelper(getApplicationContext());
 
-            ArrayList<Classview> classlist = new ArrayList<>();
-
-            ArrayList<Classview> a  = new ArrayList<Classview>();
-
-            // a.add(new Classview("0",1,"0","2020-10-10 08:55:00","0",1,"0","0","0",1));
-
-
-
+            ArrayList<Classview> a;
             a= mydb.getAllProducts2();
-            // a=mydb.ArraylistCompare(a);
             classlistAlarm_adapter adapter = new classlistAlarm_adapter(getApplicationContext(),R.layout.alarm_layout,a);
 
             listView.setAdapter(adapter);
