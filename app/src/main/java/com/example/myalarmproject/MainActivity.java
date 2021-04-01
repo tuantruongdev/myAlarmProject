@@ -176,6 +176,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                 dialog.cancel();
+
+
+
                 final ListView listView = findViewById(R.id.listviewAlarm);
 
 
