@@ -42,7 +42,7 @@ public class Music extends Service {
         Log.d("on music", "im on music ");
         int id=0;
 
-
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.reality);
         Bundle extras = intent.getExtras();
 
         String keymedia=extras.getString("extra");
@@ -124,7 +124,7 @@ public class Music extends Service {
 
 
 
-            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.reality);
+
             mediaPlayer.start();
 
 
