@@ -31,6 +31,7 @@ import android.widget.Space;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -386,11 +387,19 @@ public class MainActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which)
                                 {
 
-                                    mydb.deleteProductByID(finalA.get(selected_item).getId());
 
-                                    finalA.remove(selected_item);
-                                    adapter.notifyDataSetChanged();
-                                }
+
+                                    Classview iam=    mydb.getProductByID(finalA.get(selected_item).getId());
+                                    if ( iam.getEnable()==1){
+
+                                        Toast.makeText(getApplicationContext(),"Hãy tắt báo thức trước khi xóa!",Toast.LENGTH_SHORT).show();
+
+                                    }else {
+
+                                        mydb.deleteProductByID(finalA.get(selected_item).getId());
+                                        finalA.remove(selected_item);
+                                        adapter.notifyDataSetChanged();
+                                    }}
                             })
                             .setNegativeButton("Không" , null).show();
 
