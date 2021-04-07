@@ -218,7 +218,16 @@ public class MainActivity extends AppCompatActivity {
                 alarmManager = (AlarmManager)getApplicationContext().getSystemService(ALARM_SERVICE);
 
                 pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                Calendar nowcalendar=Calendar.getInstance();
+                if (nowcalendar.getTimeInMillis() >calendar.getTimeInMillis() ){
+
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()+86400000, pendingIntent);
+
+                }else{
+
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+
+                }
                 Log.d("receiver", String.valueOf(calendar.getTimeInMillis()));
 
 

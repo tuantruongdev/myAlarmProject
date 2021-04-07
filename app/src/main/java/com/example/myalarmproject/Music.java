@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+
 import java.security.Provider;
 
 import static androidx.core.app.NotificationCompat.PRIORITY_MIN;
@@ -42,7 +43,7 @@ public class Music extends Service {
         Log.d("on music", "im on music ");
         int id=0;
 
-        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.reality);
+
         Bundle extras = intent.getExtras();
 
         String keymedia=extras.getString("extra");
@@ -71,8 +72,6 @@ public class Music extends Service {
 
 
 
-            Intent clickIntent = new Intent(getApplicationContext(),MainActivity.class);
-            PendingIntent clickpendingIntent =PendingIntent.getBroadcast(getApplicationContext(),0,clickIntent,PendingIntent.FLAG_UPDATE_CURRENT);
 
 
             String channelId = "Your_channel_id";
@@ -82,7 +81,7 @@ public class Music extends Service {
 
 
             Intent repeating_intent = new Intent(getApplicationContext(), MainActivity.class);
-
+            repeating_intent.putExtra("action","alarm");
 
 
 
@@ -95,8 +94,7 @@ public class Music extends Service {
                     .setContentTitle(title)
                     .setAutoCancel(true)
                     .setContentText(desc)
-                    .addAction(R.drawable.ic_baseline_edit_24,"small title",clickpendingIntent)
-                    .addAction(R.mipmap.ic_launcher,"click me me",clickpendingIntent)
+
                     .setShowWhen(true)
 
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -124,7 +122,7 @@ public class Music extends Service {
 
 
 
-
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.reality);
             mediaPlayer.start();
 
 
@@ -227,4 +225,3 @@ public class Music extends Service {
     }
 
 }
-

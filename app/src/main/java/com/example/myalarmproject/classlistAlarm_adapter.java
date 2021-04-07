@@ -211,6 +211,7 @@ public class classlistAlarm_adapter extends ArrayAdapter<Classview> {
                     extras.putString("neededid"," ");
                     extras.putString("title", "Báo thức cho " +String.valueOf(h3)+":"+String.valueOf(m3));
                     extras.putString("desc", "Nhấn vào để tắt báo thức");
+
                     intent.putExtras(extras);
                     pendingIntent = PendingIntent.getBroadcast(getContext(), 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                     db.enableEvent(id,1);
@@ -221,13 +222,25 @@ public class classlistAlarm_adapter extends ArrayAdapter<Classview> {
 
 
 
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                    Calendar nowcalendar=Calendar.getInstance();
+                    if (nowcalendar.getTimeInMillis() >calendar.getTimeInMillis() ){
+
+                        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis()+86400000, pendingIntent);
+
+                    }else{
+
+                        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+
+                    }
                     Log.d("receiver", String.valueOf(calendar.getTimeInMillis()));
 
 
 
                 }
                 if (!swalamr.isChecked()) {
+
+
+
                     Bundle extras = new Bundle();
 
 
