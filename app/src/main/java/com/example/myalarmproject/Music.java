@@ -149,11 +149,11 @@ public class Music extends Service {
 
 
 
-
+        if (mediaPlayer!=null){
             if (mediaPlayer.isPlaying()) {
                 mediaPlayer.stop();
                 mediaPlayer.reset();
-
+            }
 
 
 
