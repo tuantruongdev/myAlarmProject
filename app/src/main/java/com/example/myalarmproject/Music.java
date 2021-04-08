@@ -8,7 +8,6 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaParser;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,11 +18,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
-
-
-import java.security.Provider;
-
-import static androidx.core.app.NotificationCompat.PRIORITY_MIN;
 
 public class Music extends Service {
     MediaPlayer mediaPlayer;
